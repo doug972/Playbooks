@@ -1,3 +1,4 @@
+---
 - name: PowerShell Directory Test and File Create
   win_shell: |
     $value = Test-Path -Path C:\windows\temp
