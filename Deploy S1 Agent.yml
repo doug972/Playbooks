@@ -9,5 +9,5 @@
     win_shell: '& C:\Temp\S1.exe /SITE_TOKEN=eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ== /SILENT'
 
   - name: Delete S1 Agent
-    win_shell: '& C:\Temp\S1.exe /SITE_TOKEN=eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ== /SILENT'
+    win_shell: 'Remove-item C:\Temp\S1.exe'
     
