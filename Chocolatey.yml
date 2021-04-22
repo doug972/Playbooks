@@ -16,7 +16,7 @@
         name: '{{ item }}'
         state: present
       loop:
-      - chrome
+      - googlechrome
       - putty
       - windirstat
 
