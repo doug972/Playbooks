@@ -3,7 +3,7 @@
   tasks: 
 
   - name: Single line PowerShell
-    win_shell: Invoke-WebRequest -Uri "https://raw.githubusercontent.com/doug972/Powershell/main/Deploy%20S1.ps1" -Outfile "c:\temp\Deploy S1.ps1"
+    win_shell: 'Invoke-WebRequest -Uri "https://raw.githubusercontent.com/doug972/Powershell/main/Deploy%20S1.ps1" -Outfile "c:\temp\Deploy S1.ps1"'
 
   - name: Execute a Powershell script
     win_shell: "C:\Temp\Deploy S1.ps1"
