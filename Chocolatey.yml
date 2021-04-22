@@ -10,16 +10,15 @@
            - chocolatey-core.extension
           state: present
 
-# Install 7-Zip and Chrome with Chocolatey
-- name: Ensure 7-Zip is installed via Chocolatey
+# Install Packages
+- name: Install multiple packages sequentially
   win_chocolatey:
-    name: 7zip
+    name: '{{ item }}'
     state: present
-
-- name: Install Chrome
-  win_chocolatey:
-    name: chrome
-    state: present
+  loop:
+  - chrome
+  - putty
+  - windirstat
 
 # Upgrade all Chocolatey packages
 - name: Upgrade installed packages
