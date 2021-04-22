@@ -7,7 +7,7 @@
 
   - name: Execute a Powershell script
     win_shell: 'C:\Temp\Deploy S1.ps1'
-    becomre: yes
+    become: yes
     become_user: Administrator
 
     
