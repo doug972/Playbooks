@@ -10,18 +10,18 @@
            - chocolatey-core.extension
           state: present
 
-# Install Packages
-  - name: Install multiple packages sequentially
-    win_chocolatey:
-      name: '{{ item }}'
-      state: present
-    loop:
-    - chrome
-    - putty
-    - windirstat
+    # Install Packages
+    - name: Install multiple packages sequentially
+      win_chocolatey:
+        name: '{{ item }}'
+        state: present
+      loop:
+      - chrome
+      - putty
+      - windirstat
 
-# Upgrade all Chocolatey packages
-  - name: Upgrade installed packages
-    win_chocolatey:
-      name: all
-      state: latest
+    # Upgrade all Chocolatey packages
+    - name: Upgrade installed packages
+      win_chocolatey:
+        name: all
+        state: latest
