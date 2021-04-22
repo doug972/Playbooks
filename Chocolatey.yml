@@ -1,6 +1,6 @@
 ---
 # Install Chocolatey
-- name: "Chocolatey"
+- name: Chocolatey
   hosts: all
   tasks:
     - name: Install chocolatey
