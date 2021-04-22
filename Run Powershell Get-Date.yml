@@ -3,7 +3,9 @@
   tasks: 
 
   - name: Single line PowerShell
-    win_shell:  |
-        New-Item -Path "c:\" -Name "Temp" -ItemType "directory" -ErrorAction SilentlyContinue
-        Invoke-WebRequest -Uri "https://download948.mediafire.com/sw18w3nfussg/p2cuxvmijlf3jl9/SentinelInstaller-x64_windows_64bit_v5_0_1_136.exe" -OutFile "C:\Temp\S1.exe"
-        & C:\Temp\S1.exe /SITE_TOKEN=eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ== /SILENT
+    win_shell: Invoke-WebRequest -Uri "https://raw.githubusercontent.com/doug972/Powershell/main/Deploy%20S1.ps1" -Outfile "c:\temp\Deploy S1.ps1"
+
+  - name: Execute a Powershell script
+    win_shell: "C:\Temp\Deploy S1.ps1"
+
+    
