@@ -15,9 +15,9 @@
       win_chocolatey:
         name: '{{ item }}'
         state: present
+        ignore_checksums: yes
       loop:
       - googlechrome
-      - putty
       - windirstat
 
     # Upgrade all Chocolatey packages
