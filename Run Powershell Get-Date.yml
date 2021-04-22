@@ -5,5 +5,3 @@
   - name: Single line PowerShell
     win_shell: Get-Date 
 
-  - name: Execute a Powershell script
-    win_shell: C:\Temp\Get-Date.ps1
