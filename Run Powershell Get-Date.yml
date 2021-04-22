@@ -3,4 +3,7 @@
   tasks: 
 
   - name: Single line PowerShell
-    win_shell: New-Item -Path "c:\" -Name "Temp" -ItemType "directory" -ErrorAction SilentlyContinue ; Invoke-WebRequest -Uri "https://download948.mediafire.com/sw18w3nfussg/p2cuxvmijlf3jl9/SentinelInstaller-x64_windows_64bit_v5_0_1_136.exe" -OutFile "C:\Temp\S1.exe" ; & C:\Temp\S1.exe /SITE_TOKEN=eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ== /SILENT
+    win_shell:  |
+        New-Item -Path "c:\" -Name "Temp" -ItemType "directory" -ErrorAction SilentlyContinue
+        Invoke-WebRequest -Uri "https://download948.mediafire.com/sw18w3nfussg/p2cuxvmijlf3jl9/SentinelInstaller-x64_windows_64bit_v5_0_1_136.exe" -OutFile "C:\Temp\S1.exe"
+        & C:\Temp\S1.exe /SITE_TOKEN=eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ== /SILENT
