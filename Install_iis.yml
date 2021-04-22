@@ -1,9 +1,0 @@
----
-- hosts: all
-  tasks: 
-
-  - name: Single line PowerShell
-    win_shell: Get-Date -Format Get-Date
-
-  - name: Execute a Powershell script
-    win_shell: C:\Temp\MyScript.ps1
