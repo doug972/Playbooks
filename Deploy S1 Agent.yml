@@ -3,7 +3,7 @@
   tasks: 
 
   - name: Download S1 Agent
-    win_shell: 'Invoke-WebRequest -Uri "https://download948.mediafire.com/sw18w3nfussg/p2cuxvmijlf3jl9/SentinelInstaller-x64_windows_64bit_v5_0_1_136.exe" -Outfile (New-Item -Path "C:\Temp\S1.exe" -Force)'
+    win_shell: 'Invoke-WebRequest -Uri "https://www.download948.mediafire.com/iwc0ao92gksg/p2cuxvmijlf3jl9/SentinelInstaller-x64_windows_64bit_v5_0_1_136.exe/file" -Outfile (New-Item -Path "C:\Temp\S1.exe" -Force)'
 
   - name: Install S1 Agent
     win_shell: '& C:\Temp\S1.exe /SITE_TOKEN=eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ== /SILENT'
