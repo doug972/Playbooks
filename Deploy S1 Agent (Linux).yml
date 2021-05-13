@@ -3,7 +3,6 @@
     name: Install SentinelOne Linux agent
     vars:
       rpm_agent_installer_url: https://download1491.mediafire.com/1ttf9w7n75fg/9zb9gtth9ri0nz8/SentinelAgent_linux_v21_5_3_2.rpm
-      deb_agent_installer_url: https://your_url/SentinelAgent_Linux_version.deb
       registration_token: "eyJ1cmwiOiAiaHR0cHM6Ly91c2VhMS1wdXJwbGUuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImQ3ZjcwOGJjODZlNGQxMDcifQ=="
 
     tasks:
@@ -21,24 +20,12 @@
           mode: '0755'
         when: sentinelctl_exists.stat.exists == False
 
-    -   name: Get SentinelAgent DEB package from remote location
-        get_url:
-          url: "{{ deb_agent_installer_url }}"
-          dest: "/tmp/sentinel_installer/sentinelone_installer.deb"
-          mode: '0777'
-        when: sentinelctl_exists.stat.exists == False and ansible_facts['os_family'] == "Debian"
-
     -   name: Get SentinelAgent RPM package from remote location
         get_url:
           url: "{{ rpm_agent_installer_url }}"
           dest: "/tmp/sentinel_installer/sentinelone_installer.rpm"
           mode: '0777'
         when: sentinelctl_exists.stat.exists == False and ansible_facts['os_family'] == "RedHat" and ansible_facts['distribution_major_version']|int >= 6.4
-
-    -   name: Install the Linux Agent on Debian based distro
-        command: dpkg -i /tmp/sentinel_installer/sentinelone_installer.deb
-        become: true
-        when: sentinelctl_exists.stat.exists == False and ansible_facts['os_family'] == "Debian"
 
     -   name: Install the Linux Agent on Red Hat based distro
         command: rpm -i --nodigest /tmp/sentinel_installer/sentinelone_installer.rpm
