@@ -1,5 +1,6 @@
+---
 - hosts: all
-    name: Install SentinelOne Linux agent
+    -   name: Install SentinelOne Linux agent
     vars:
       rpm_agent_installer_url: https://download1491.mediafire.com/1ttf9w7n75fg/9zb9gtth9ri0nz8/SentinelAgent_linux_v21_5_3_2.rpm
       deb_agent_installer_url: https://your_url/SentinelAgent_Linux_version.deb
